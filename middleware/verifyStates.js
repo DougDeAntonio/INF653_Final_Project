@@ -5,11 +5,12 @@ const stateCodes = statesData.map(state => state.code);
 const verifyStates = (req, res, next) => {
     const stateCode = req.params.state.toUpperCase();
     if (stateCodes.includes(stateCode)) {
-        req.code = stateCode;
+        req.code = stateCode; // Attach the state code to the request object
         next();
     } else {
-        res.status(404).json({ error: 'Invalid state abbreviation parameter' });
+        res.status(404).json({ message: 'Invalid state abbreviation parameter' });
     }
 };
 
 module.exports = verifyStates;
+
