@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +32,9 @@
         th {
             background-color: #333;
         }
+        .state-color {
+            color: #0bf30b; 
+        }
     </style>
 </head>
 <body>
@@ -45,7 +47,8 @@
     <h2>
         Use the /states endpoint to get started.
       <br>
-      For the requests with <b><i>/:state</i></b> use the two letter abbrevation in that field
+      For the requests with <span class="state-color">/:state</span> use the two letter abbrevation in that field 
+      <br>(for example - /states/<span class="state-color">CA</span>/funfact)
     </h2>
     <table>
         <thead>
@@ -68,30 +71,33 @@
                 <td>All state data for non-contiguous states (AK, HI)</td>
             </tr>
             <tr>
-                <td>/states/:state</td>
+                <td>/states/<span class="state-color">:state</span></td>
                 <td>All data for the state URL parameter</td>
             </tr>
             <tr>
-                <td>/states/:state/funfact</td>
+                <td>/states/<span class="state-color">:state</span>/funfact</td>
                 <td>A random fun fact for the state URL parameter</td>
             </tr>
             <tr>
-                <td>/states/:state/capital</td>
+                <td>/states/<span class="state-color">:state</span>/capital</td>
                 <td>{ ‘state’: stateName, ‘capital’: capitalName }</td>
             </tr>
             <tr>
-                <td>/states/:state/nickname</td>
+                <td>/states/<span class="state-color">:state</span>/nickname</td>
                 <td>{ ‘state’: stateName, ‘nickname’: nickname }</td>
             </tr>
             <tr>
-                <td>/states/:state/population</td>
+                <td>/states/<span class="state-color">:state</span>/population</td>
                 <td>{ ‘state’: stateName, ‘population’: population }</td>
             </tr>
             <tr>
-                <td>/states/:state/admission</td>
+                <td>/states/<span class="state-color">:state</span>/admission</td>
                 <td>{ ‘state’: stateName, ‘admitted’: admissionDate }</td>
             </tr>
         </tbody>
     </table>
+  <br>
+  <br>
+  <br>
 </body>
 </html>
