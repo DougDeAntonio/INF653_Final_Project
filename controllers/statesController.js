@@ -28,9 +28,9 @@ const getState = async (req, res) => {
         return res.status(404).json({ message: 'Invalid state abbreviation parameter' });
     }
     const stateInDb = await State.findOne({ stateCode: req.code });
-    const response = { ...state }; // Copy all properties from statesData.json
+    const response = { ...state }; 
     if (stateInDb && stateInDb.funfacts.length > 0) {
-        response.funfacts = stateInDb.funfacts; // Include funfacts only if they exist
+        response.funfacts = stateInDb.funfacts; 
     }
     res.json(response);
 };
@@ -47,7 +47,7 @@ const getFunFact = async (req, res) => {
         const randomFunFact = stateInDb.funfacts[Math.floor(Math.random() * stateInDb.funfacts.length)];
         res.json({ funfact: randomFunFact });
     } else {
-        res.json({ message: `No Fun Facts found for ${state.state}` }); // Use full state name
+        res.json({ message: `No Fun Facts found for ${state.state}` }); 
     }
 };
 
@@ -158,8 +158,8 @@ const getPopulation = (req, res) => {
     if (!state) {
         return res.status(404).json({ message: 'Invalid state abbreviation parameter' });
     }
-    const population = state.population.toLocaleString('en-US'); // Format with commas
-    res.json({ state: state.state, population }); // Include state and population
+    const population = state.population.toLocaleString('en-US'); 
+    res.json({ state: state.state, population }); 
 };
 
 
